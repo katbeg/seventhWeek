@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Adaptiv</title>
+    <style>
+
+body {
+        font-size: 3vw;
+     }
+
+.container {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 500px;
+}
+
+.header, .footer {
+            background-color: burlywood;
+}
+
+.block {
+            background-color: peachpuff;
+}
+
+.aside {
+            background-color: rgb(224, 142, 142);
+}
+
+.block {
+    min-height: 300px;
+}
+
+.cell {
+            background-color: rosybrown;
+            min-height: 1.5vh;
+}
+
+        @media screen and (min-width: 1024px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 15% 70% 15%;    
+        }
+
+        .header {
+            grid-row: 1/2;
+            grid-column: 1/5;
+        }
+
+        .footer {
+            grid-column: 1/5;
+        }
+
+        .block {
+            grid-row: 2/3;
+            grid-column: 1/4;
+        }
+
+        .aside {
+            grid-row: 2/3;
+            grid-column: 4/5;
+        }
+        .block {
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 25% 25%;
+            align-content: flex-end;
+            gap: 1rem;
+        }
+
+        .cell {
+            min-height: 1.5vh;
+        }
+
+        .cell-1 {
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+
+        .cell-2 {
+            grid-row: 1/2;
+            grid-column: 2/3;
+        }
+
+        .cell-3 {
+            grid-row: 2/3;
+            grid-column: 1/3;
+        }
+        }
+
+       
+        
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .cell {
+                        margin: 1rem;
+                    }
+
+                    .block {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                    }
+                }
+
+                @media screen and (max-width: 767px) {
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .cell {
+                        min-height: 15%;
+                        margin: 0.5rem;
+                    }
+
+                    .block {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                    }
+                    
+                    .footer {
+                        display: none;
+                    }
+
+                }
+       
+    </style>
+</head>
+<body class="container">
+    <header class="header">[Header]</header>
+    <aside class="aside">[Sidebar]</aside>
+    <main class="block">
+            <div class="cell cell-1">[More 1]</div>
+            <div class="cell cell-2">[More 2]</div>
+            <div class="cell cell-3">[More 3]</div>
+    </main>
+    <footer class="footer">[Footer]</footer>
+</body>
+</html>
